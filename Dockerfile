@@ -1,5 +1,3 @@
-ARG PGVERSION
-
 # base build image
 FROM golang:1.14-buster AS build_base
 
@@ -24,7 +22,7 @@ RUN make
 #######
 ####### Build the final image
 #######
-FROM postgres:$PGVERSION
+FROM postgres:12.3
 
 RUN useradd -ms /bin/bash stolon
 
@@ -32,5 +30,6 @@ EXPOSE 5432
 
 # copy the agola-web dist
 COPY --from=builder /stolon/bin/ /usr/local/bin
+COPY --from=builder /stolon/wal-g /usr/local/bin
 
-RUN chmod +x /usr/local/bin/stolon-keeper /usr/local/bin/stolon-sentinel /usr/local/bin/stolon-proxy /usr/local/bin/stolonctl
+RUN chmod +x /usr/local/bin/stolon-keeper /usr/local/bin/stolon-sentinel /usr/local/bin/stolon-proxy /usr/local/bin/stolonctl /usr/local/bin/wal-g

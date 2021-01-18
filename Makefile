@@ -40,4 +40,4 @@ stolonctl:
 docker:
 	if [ -z $${PGVERSION} ]; then echo 'PGVERSION is undefined'; exit 1; fi; \
 	if [ -z $${TAG} ]; then echo 'TAG is undefined'; exit 1; fi; \
-	docker build --build-arg PGVERSION=${PGVERSION} -t ${TAG} -f examples/kubernetes/image/docker/Dockerfile .
+	docker build --build-arg PGVERSION=${PGVERSION} -t ${TAG} -f Dockerfile .

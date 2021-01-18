@@ -24,6 +24,8 @@ RUN make
 #######
 FROM postgres:12.3
 
+RUN apt-get update; apt-get install ca-certificates -y
+
 RUN useradd -ms /bin/bash stolon
 
 EXPOSE 5432

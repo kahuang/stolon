@@ -95,3 +95,4 @@ To submit your changes please open a pull request.
 
 * For general discussion about using and developing stolon, join the [stolon forum](https://talk.stolon.io)
 * For bugs and feature requests file an [issue](https://github.com/sorintlab/stolon/issues/new/choose)
+

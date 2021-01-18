@@ -35,3 +35,4 @@ COPY --from=builder /stolon/bin/ /usr/local/bin
 COPY --from=builder /stolon/wal-g /usr/local/bin
 
 RUN chmod +x /usr/local/bin/stolon-keeper /usr/local/bin/stolon-sentinel /usr/local/bin/stolon-proxy /usr/local/bin/stolonctl /usr/local/bin/wal-g
+
